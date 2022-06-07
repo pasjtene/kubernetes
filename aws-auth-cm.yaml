@@ -4,9 +4,10 @@ metadata:
   name: aws-auth
   namespace: kube-system
 data:
-  mapRoles: |
-    - rolearn: <ARN of instance role (not instance profile)>
-      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - userarn: arn:aws:iam::169193134380:user/pasjtene
+      username: pasjtene
       groups:
-        - system:bootstrappers
+        - system:masters
         - system:nodes
+        
