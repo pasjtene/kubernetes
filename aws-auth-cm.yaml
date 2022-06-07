@@ -1,13 +1,26 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
 apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: aws-auth
-  namespace: kube-system
 data:
+  mapRoles: |
+    - groups:
+      - system:masters
+      - system:nodes
+    rolearn: arn:aws:iam::169193134380:role/eksctl-myjt-cluster-nodegroup-ng-NodeInstanceRole-KE83NDUPGY4L
+    username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     - userarn: arn:aws:iam::169193134380:user/pasjtene
       username: pasjtene
       groups:
         - system:masters
         - system:nodes
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-06-07T05:20:55Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "8044"
+  uid: 7121af36-1eeb-4f8d-91c0-81c94529bb1e
         
