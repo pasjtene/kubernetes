@@ -11,7 +11,7 @@ nodeGroups:
     desiredCapacity: 10
     volumeSize: 80
     ssh:
-      allow: true # will use ~/.ssh/id_rsa.pub as the default ssh key
+      allow: false # will use ~/.ssh/id_rsa.pub as the default ssh key
   - name: jtng-2
     instanceType: m5.xlarge
     desiredCapacity: 2
