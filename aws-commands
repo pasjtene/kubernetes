@@ -1,0 +1,12 @@
+ KUBE_EDITOR="nano" kubectl edit configmap aws-auth -n kube-system
+
+kubectl get pods --all-namespaces -o wide
+
+
+$ eksctl create cluster --name myjt-cluster --region us-east-1 --with-oidc --ssh-access --ssh-public-key myjtKeyPair --instance-types=m5.xlarge --managed
+
+
+[ec2-user@ip-172-31-23-86 ~]$ kubectl describe configmap -n kube-system aws-auth
+
+** Deleting a cluster:
+$ eksctl delete cluster myjt-cluster
