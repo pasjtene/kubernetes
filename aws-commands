@@ -10,3 +10,13 @@ $ eksctl create cluster --name myjt-cluster --region us-east-1 --with-oidc --ssh
 
 ** Deleting a cluster:
 $ eksctl delete cluster myjt-cluster
+
+$ eksctl create cluster --name jtdev8-cluster --version 1.22 --region us-east-1 --nodegroup-name jtworkers8-node --node-type t3.micro --nodes 3 --nodes-min 1 --nnodes-min 1 --nodes-max 4 --managed
+
+$ eksctl create cluster --name jtdev8-cluster --version 1.22 --region us-east-1  --with-oidc --ssh-access --ssh-public-key myjtKeyPair --nodegroup-name jtworkers8-node --instance-types=m5.xlarge --nodes 3 --nodes-min 1 --nodes-max 4 --managed
+
+Generate SSH key pair
+#ssh-keygen -P "" -m PEM -f my_key_pair
+see https://docs.aws.amazon.com/transfer/latest/userguide/key-management.html
+
+See Creating and managin cluster https://eksctl.io/usage/creating-and-managing-clusters

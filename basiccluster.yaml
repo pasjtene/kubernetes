@@ -5,6 +5,7 @@ metadata:
   name: jtbasic-cluster
   region: us-east-1
 
+availabilityZones: ['us-east-1a', 'us-east-1b', 'us-east-1c', 'us-east-1d']
 nodeGroups:
   - name: jtng-1
     instanceType: m5.large
