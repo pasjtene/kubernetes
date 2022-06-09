@@ -3,7 +3,7 @@ kind: ClusterConfig
 
 metadata:
   name: jtbasic-cluster
-  region: eu-north-1
+  region: us-east-1
 
 nodeGroups:
   - name: jtng-1
@@ -17,4 +17,4 @@ nodeGroups:
     desiredCapacity: 2
     volumeSize: 100
     ssh:
-      publicKeyPath: ~/.ssh/ec2_id_rsa.pub
+      ssh-public-key: myjtKeyPair
