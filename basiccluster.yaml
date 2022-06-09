@@ -17,4 +17,4 @@ nodeGroups:
     desiredCapacity: 2
     volumeSize: 100
     ssh:
-      ssh-public-key: myjtKeyPair
+      publicKeyPath: ./myjtkey_pair.pub
