@@ -3,7 +3,7 @@
 kubectl get pods --all-namespaces -o wide
 
 
-$ eksctl create cluster --name myjt-cluster --region us-east-1 --with-oidc --ssh-access --ssh-public-key myjtKeyPair --instance-types=m5.xlarge --managed
+$ eksctl create cluster --name myjt3-cluster3 --region=us-east-1 --nodegroup-name jtng-1  --nodes=3 --nodes-min=1 --nodes-max=4   --zones=us-east-1a,us-east-1b,us-east-1d,us-east-1c --with-oidc --ssh-access --ssh-public-key myjtKeyPair --instance-types=m5.xlarge --managed
 
 
 [ec2-user@ip-172-31-23-86 ~]$ kubectl describe configmap -n kube-system aws-auth
