@@ -1,0 +1,16 @@
+[centos@gocamer ~]$ sudo su
+#Every sunday at 15h10, run weekly backup script
+#Every day at 23h20 and 19h30 run scpremote.sh to copy backup files remotely
+#Every day at 23h05 and 19h05 run mysql-back to save mysql db and local files
+#Every minutes of everyday, run php artisan schedule:run >> /dev/null 2>&1, this required for laravel background tasks to run
+
+[root@gocamer centos]# crontab -l
+5 23 * * * /usr/local/bin/mysql-back.sh > /dev/null 2>&1
+5 19 * * * /usr/local/bin/mysql-back.sh > /dev/null 2>&1
+20 23 * * * /usr/local/bin/scpremote.sh > /dev/null 2>&1
+30 19 * * * /usr/local/bin/scpremote.sh > /dev/null 2>&1
+10 15 * * 0 /usr/local/bin/mysql-back-weekly.sh > /dev/null 2>&1
+* * * * * cd /var/www/html/v5 && php artisan schedule:run >> /dev/null 2>&1
+
+
+
